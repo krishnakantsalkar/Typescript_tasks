@@ -1,6 +1,6 @@
 //enum method for books
 
-function BookDetails(){          //create function
+function BookDetails(){          //1-create function
     let books =[{                               //you create object array here
         name : 'The Shining',
         Genre : userBooks.horror,
@@ -54,26 +54,26 @@ return books;
 };
 
 
-enum userBooks {'horror','detective','fantasy','scifi'};
+enum userBooks {'horror','detective','fantasy','scifi'}; //2-create an enum (user defined data type)
 
-function userBookDetails(books:userBooks):Array<string>{
-    console.log(`Genre: ${userBooks[books=1]}`);
-    let userBookOutput:string[] = [];
-    let newBookDetail = BookDetails();
-    for(let b of newBookDetail){
+function userBookDetails(books:userBooks):Array<string>{  //3-create function method enter parameter,return type: generic array of string
+    console.log(`Genre: ${userBooks[books]}`); //3-define index of parameter to return value instead of index
+    let userBookOutput:string[] = []; //4-create variable and and let it hav empty string array
+    let newBookDetail = BookDetails(); // 5-create variable and store book details
+    for(let b of newBookDetail){ //6-apply for of loop
         if(b.avl){
-            userBookOutput.push ("Book is Available:",b.name, b.author);
+            userBookOutput.push ("Book is Available:",b.name, b.author,b.price); // if avl is true push values in empty string above
             break;
         }
 
-        // else { userBookOutput.push("","Following book is not available:",b.name,b.author);
+        else { userBookOutput.push("","Following book is not available:",b.name,b.author,b.price);
             
-        // }
+        }
 
     }
-console.log(userBookOutput);
-return userBookOutput;
+console.log(userBookOutput); //7-
+return userBookOutput; //8- 
 
 }
 
-userBookDetails(userBooks.horror);
+userBookDetails(userBooks.horror);//9- call fuction and enter paramaters

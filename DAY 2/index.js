@@ -56,20 +56,22 @@ var userBooks;
     userBooks[userBooks["fantasy"] = 2] = "fantasy";
     userBooks[userBooks["scifi"] = 3] = "scifi";
 })(userBooks || (userBooks = {}));
-;
+; //2-create an enum (user defined data type)
 function userBookDetails(books) {
-    console.log("Genre: " + userBooks[books]);
-    var userBookOutput = [];
-    var newBookDetail = BookDetails();
-    for (var _i = 0, newBookDetail_1 = newBookDetail; _i < newBookDetail_1.length; _i++) {
+    console.log("Genre: " + userBooks[books]); //3-define index of parameter to return value instead of index
+    var userBookOutput = []; //4-create variable and and let it hav empty string array
+    var newBookDetail = BookDetails(); // 5-create variable and store book details
+    for (var _i = 0, newBookDetail_1 = newBookDetail; _i < newBookDetail_1.length; _i++) { //6-apply for of loop
         var b = newBookDetail_1[_i];
         if (b.avl) {
-            userBookOutput.push("Book is Available:", b.name, b.author);
+            userBookOutput.push("Book is Available:", b.name, b.author, b.price); // if avl is true push values in empty string above
+            break;
         }
-        // else { userBookOutput.push("","Following book is not available:",b.name,b.author);
-        // }
+        else {
+            userBookOutput.push("", "Following book is not available:", b.name, b.author, b.price);
+        }
     }
-    console.log(userBookOutput);
-    return userBookOutput;
+    console.log(userBookOutput); //7-
+    return userBookOutput; //8- 
 }
-userBookDetails(userBooks.horror);
+userBookDetails(userBooks.horror); //9- call fuction and enter paramaters
