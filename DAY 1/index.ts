@@ -61,4 +61,4 @@ return storecurrentBookDetails;
 };
 
 let newbookdetail = BookDetails(); //store object array inside a new variable
-currentBookDetails(newbookdetail); //call the new variable inside the method 
+currentBookDetails(newbookdetail); //call the new variable inside the method
