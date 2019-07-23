@@ -66,9 +66,9 @@ function userBookDetails(books:userBooks):Array<string>{
             
         }
 
-        // else { userBookOutput.push("","Following book is not available:",b.name,b.author);
+        else { userBookOutput.push("","Following book is not available:",b.name,b.author);
             
-        // }
+        }
 
     }
 console.log(userBookOutput);
