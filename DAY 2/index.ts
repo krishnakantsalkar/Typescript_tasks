@@ -57,18 +57,18 @@ return books;
 enum userBooks {'horror','detective','fantasy','scifi'};
 
 function userBookDetails(books:userBooks):Array<string>{
-    console.log(`Genre: ${userBooks[books]}`);
+    console.log(`Genre: ${userBooks[books=1]}`);
     let userBookOutput:string[] = [];
     let newBookDetail = BookDetails();
     for(let b of newBookDetail){
         if(b.avl){
             userBookOutput.push ("Book is Available:",b.name, b.author);
-            
+            break;
         }
 
-        else { userBookOutput.push("","Following book is not available:",b.name,b.author);
+        // else { userBookOutput.push("","Following book is not available:",b.name,b.author);
             
-        }
+        // }
 
     }
 console.log(userBookOutput);
